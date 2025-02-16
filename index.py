@@ -5,6 +5,7 @@ from page_2 import create_page_2
 from page_3 import create_page_3
 from page_4 import create_page_4
 from app import app
+import os 
 
 server = app.server
 app.config.suppress_callback_exceptions = True
@@ -29,4 +30,5 @@ def display_page(pathname):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=False)
+    port = int(os.environ.get('PORT', 8050))
+    app.run_server(host='0.0.0.0', port=port)
