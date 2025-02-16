@@ -12,6 +12,9 @@ app.layout = html.Div(
     style={'textAlign': 'center', 'marginTop': '50px'}
 )
 
+# Exposer l'objet server pour Gunicorn
+server = app.server
+
 # Exécuter l'application
 if __name__ == '__main__':
     app.run_server(debug=True)
