@@ -4,8 +4,6 @@ from dash.dependencies import Input, Output
 from app import app
 import pandas as pd
 import dash
-import dash_mantine_components as dmc
-from dash_iconify import DashIconify
 
 nav = create_navbar()
 
