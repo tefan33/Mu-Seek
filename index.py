@@ -1,6 +1,5 @@
 from dash import html, dcc
 from dash.dependencies import Input, Output
-from home import create_page_home
 from page_2 import create_page_2
 from page_3 import create_page_3
 from page_4 import create_page_4
@@ -23,9 +22,6 @@ def display_page(pathname):
         return create_page_3()
     if pathname == '/page-4':
         return create_page_4()
-
-    else:
-        return create_page_home()
 
 
 if __name__ == '__main__':
