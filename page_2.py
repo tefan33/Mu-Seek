@@ -23,9 +23,8 @@ genai.configure(api_key= os.getenv("GOOGLE_API_KEY"))
 
 ################################## LECTURE FICHIER ##################################
 
-
 # Lien vers le fichier
-link = 'https://raw.githubusercontent.com/Yann-ML/PROJET_3_WCS/main/df_spotify_1754.zip'
+link = 'https://raw.githubusercontent.com/Yann-ML/PROJET_3_WCS/main/df_pres.zip'
 
 # Lecture fichier
 df = pd.read_csv(link)
@@ -42,30 +41,10 @@ nav = create_navbar()
 
 ################################## STYLE DES AFFICHAGES ##################################
 
-dropdown_style = {
-    'font-family' : 'calibri',
-    'color': 'white'
-}
-
-button_style = {
-    'padding': '10px 20px',
-    'margin': '5px',
-    'fontWeight' : 'bold',
-    'background-color': '#34403E',
-    'color': 'white',
-    'font-family' : 'papyrus',
-    'border': '0.3px solid white',
-    'border-radius': '5px',
-    'font-size': '16px',
-    'text-align': 'center',
-    'display': 'inline-block',
-    'justifyContent': 'center'
-}
-
 artist_style = {
     'display': 'flex', 
     'flexDirection': 'row',
-    'background-image': 'linear-gradient(to right, #2D8C1A , #34403E 30%)',
+    'background': 'linear-gradient(43deg, rgba(0,0,0,1) 81%, rgba(35,249,5,0.9948573179271709) 100%)',
     'font-family' : 'calibri',
     'color' : 'white',
     'border-radius': '5px',
@@ -74,18 +53,11 @@ artist_style = {
     'justifyContent': 'center',
     'text-align' : 'justify'}
 
-img_album_style={
-    'height': '15%',
-    'width': '15%',
-    'flex': '2',
-    'padding' : '3px',
-    'border-radius': '10px'
-}
 
 album_style1 = {
     'display': 'flex', 
     'flexDirection': 'row',
-    'background-image': 'linear-gradient(to left, #2A7E19, #34403E 30%)',
+    'background': 'linear-gradient(236deg, rgba(0,0,0,1) 90%, rgba(35,249,5,0.9948573179271709) 100%)',
     'font-family' : 'calibri',
     'color' : 'white',
     'border-radius': '5px',
@@ -97,7 +69,7 @@ album_style1 = {
 album_style2 = {
     'display': 'flex', 
     'flexDirection': 'row',
-    'background-image': 'linear-gradient(to left, #2A7E19, #34403E 30%)',
+    'background': 'linear-gradient(236deg, rgba(0,0,0,1) 90%, rgba(35,249,5,0.9948573179271709) 100%)',
     'font-family' : 'calibri',
     'color' : 'white',
     'border-radius': '5px',
@@ -109,23 +81,13 @@ album_style2 = {
 album_style3 = {
     'display': 'flex', 
     'flexDirection': 'row',
-    'background-image': 'linear-gradient(to left, #2A7E19, #34403E 30%)',
+    'background': 'linear-gradient(236deg, rgba(0,0,0,1) 90%, rgba(35,249,5,0.9948573179271709) 100%)',
     'font-family' : 'calibri',
     'color' : 'white',
     'border-radius': '5px',
     'margin': '5px',
     'padding' : '10px',
     'justifyContent': 'center'
-}
-
-infos_album_style={
-    'display': 'flex',
-    'flexDirection': 'column',
-    'flex' : '2',
-    'gap' : '5px',
-    'padding' : '4px',
-    'justifyContent': 'center',
-    'text-align' : 'justify'
 }
 
 ################################## APPLICATION ##################################
@@ -135,14 +97,6 @@ def create_page_2():
     # Titres et textes
     layout = html.Div([
         nav,
-        
-        ####################### TITRE PAGE #######################
-        
-        html.H1(["Mu'Seek"],
-            style={'textAlign': 'center',
-                    'font-family' : 'calibri',
-                    'color' : 'white',
-                    'font-size' : '60px'}),
 
         ####################### BULLE INFOS DF #######################
         
@@ -151,28 +105,28 @@ def create_page_2():
             # Affichage popularité
             html.Div(children=[
                     html.Label(
-                            style=button_style,
+                            className='button_style',
                             id='pop_button')
                         ], style={'padding': 10, 'flex': 1}),
             
             # Affichage followers
             html.Div(children=[
                     html.Label(
-                            style=button_style,
+                            className='button_style',
                             id='follow_button')
                         ], style={'padding': 10, 'flex': 1}),
 
             # Affichage nb albums
             html.Div(children=[        
                     html.Label(
-                            style=button_style,
+                            className='button_style',
                             id='album_button')
                         ], style={'padding': 10, 'flex': 1}),
 
             # Affichage nb titres
             html.Div(children=[        
                     html.Label(
-                            style=button_style,
+                            className='button_style',
                             id='title_button')
                         ], style={'padding': 10, 'flex': 1}),
 
@@ -180,14 +134,14 @@ def create_page_2():
             html.Div(children=[
                     # On explose la liste des genres, dont on récupère les valeurs uniques, et on prend ensuite la longueur de la liste
                     html.Label(
-                            style=button_style,
+                            className='button_style',
                             id='genre_button')
                         ], style={'padding': 10, 'flex': 1}),
             
             # Affichage nb labels
             html.Div(children=[
                     html.Label(
-                            style=button_style,
+                            className='button_style',
                             id='label_button')
                         ], style={'padding': 10, 'flex': 1})
 
@@ -200,7 +154,7 @@ def create_page_2():
                     id='input_search',
                     value='',
                     placeholder='Sélectionner un artiste',
-                    style=dropdown_style,
+                    # clas=dropdown_style,
                     className='custom-dropdown'),
 
         ########################### ARTISTE SELECTIONNE / BIOGRAPHIE, PHOTO ###########################
@@ -212,7 +166,7 @@ def create_page_2():
                 html.Label(
                     id='bio_artist',
                     style={'flex' : '6',
-                        'padding' : '5px',
+                            'padding' : '5px',
                             'justifyContent': 'center',
                             'text-align' : 'justify'}),
                     
@@ -235,7 +189,7 @@ def create_page_2():
         html.Div([
             html.Img(
                     id='img_album1',
-                    style=img_album_style),
+                    className='img_album_style'),
             
             # colonne affichage infos album 1
             html.Div([
@@ -243,7 +197,7 @@ def create_page_2():
                 html.Label(id='pop_album1'),
                 html.Label(id='release_album1'),
                 html.Label(id='label_album1')
-                    ], style=infos_album_style),
+                    ], className='infos_album_style'),
             
             # affichage infos album demandé au chat
             html.Label(
@@ -260,7 +214,7 @@ def create_page_2():
         html.Div([
             html.Img(
                     id='img_album2',
-                    style=img_album_style),
+                    className='img_album_style'),
             
             # colonne affichage infos album 2
             html.Div([
@@ -268,7 +222,7 @@ def create_page_2():
                 html.Label(id='pop_album2'),
                 html.Label(id='release_album2'),
                 html.Label(id='label_album2')
-                    ], style=infos_album_style),
+                    ], className='infos_album_style'),
             
             # affichage infos album demandé au chat
             html.Label(
@@ -285,7 +239,7 @@ def create_page_2():
         html.Div([
             html.Img(
                     id='img_album3',
-                    style=img_album_style),
+                    className='img_album_style'),
             
             # colonne affichage infos album 3
             html.Div([
@@ -293,7 +247,7 @@ def create_page_2():
                 html.Label(id='pop_album3'),
                 html.Label(id='release_album3'),
                 html.Label(id='label_album3')
-                    ], style=infos_album_style),
+                    ], className='infos_album_style'),
             
             # affichage infos album demandé au chat
             html.Label(
@@ -306,7 +260,7 @@ def create_page_2():
                 ],id='album_line3',
                 style={}),
         
-    ], className="page-content")
+    ], className="body")
 
     return layout
 
