@@ -9,10 +9,10 @@ nav = create_navbar()
 
 ################################ FICHIERS DE SCRAPP SNEP ################################
 
-df_album = pd.read_csv('https://raw.githubusercontent.com/Yann-ML/PROJET_3_WCS/main/WEBSCRAP/df_top_album.csv')
-df_album_week = pd.read_csv('https://raw.githubusercontent.com/Yann-ML/PROJET_3_WCS/main/WEBSCRAP/df_top_album_week.csv')
-df_single_week = pd.read_csv('https://raw.githubusercontent.com/Yann-ML/PROJET_3_WCS/main/WEBSCRAP/df_top_single_week.csv')
-df_single = pd.read_csv('https://raw.githubusercontent.com/Yann-ML/PROJET_3_WCS/main/WEBSCRAP/df_top_singles.csv')
+df_album = pd.read_csv('https://raw.githubusercontent.com/Yann-ML/PROJET_3_WCS/main/RecupData/DataFrames/df_top_album.csv')
+df_album_week = pd.read_csv('https://raw.githubusercontent.com/Yann-ML/PROJET_3_WCS/main/RecupData/DataFrames/df_top_album_week.csv')
+df_single_week = pd.read_csv('https://raw.githubusercontent.com/Yann-ML/PROJET_3_WCS/main/RecupData/DataFrames/df_top_single_week.csv')
+df_single = pd.read_csv('https://raw.githubusercontent.com/Yann-ML/PROJET_3_WCS/main/RecupData/DataFrames/df_top_singles.csv')
 
 # création d'un dict des dataframes
 
