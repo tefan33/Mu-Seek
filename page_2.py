@@ -25,8 +25,7 @@ genai.configure(api_key= os.getenv("GOOGLE_API_KEY"))
 
 
 # Lien vers le fichier
-link = 'https://raw.githubusercontent.com/tefan33/Mu-Seek/blob/main/df_spotify_1754.zip'
-
+link = 'https://raw.githubusercontent.com/tefan33/Mu-Seek/main/df_spotify_1754.zip'
 
 # Lecture fichier
 df = pd.read_csv(link)
