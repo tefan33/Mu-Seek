@@ -25,7 +25,7 @@ genai.configure(api_key= os.getenv("GOOGLE_API_KEY"))
 
 
 # Lien vers le fichier
-link = 'https://raw.githubusercontent.com/Yann-ML/PROJET_3_WCS/main/API_SPOTIFY/df_spotify_1754.zip'
+link = 'https://raw.githubusercontent.com/Yann-ML/PROJET_3_WCS/main/df_pres.zip'
 
 # Lecture fichier
 df = pd.read_csv(link)
