@@ -15,7 +15,7 @@ model = genai.GenerativeModel('gemini-1.5-flash')
 # on créé la barre de navigation
 nav = create_navbar()
 # on récupère le dataframe
-df = pd.read_csv('https://raw.githubusercontent.com/Yann-ML/PROJET_3_WCS/main/API_SPOTIFY/df_spotify_1754.zip')
+df = pd.read_csv('https://raw.githubusercontent.com/Yann-ML/PROJET_3_WCS/main/df_pres.zip')
 # on créé la liste des artistes pour alimenter notre dropBox
 list_artiste = sorted(df['artist_name'].unique().tolist())
 # mise en place du layout par la fonction
